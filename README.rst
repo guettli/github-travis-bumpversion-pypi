@@ -1,12 +1,60 @@
 github-travis-bumpversion-pypi
 ==============================
 
-This documentation explains how I do CI for small open source projects.
+This documentation explains how I do CI for small open source python projects.
 
-Four steps: 
+Four steps:
 
- 1. github commit
- 1. travis CI
- 1. bumpversion
- 1. Upload to pypi
+#. github commit
+#. travis CI
+#. bumpversion
+#. Upload to pypi
+
+Terms:
+
+* **Keepass**: This is my tool to store secrets. Of course you can use any other tool
+
+
+* Create github repository. For example: https://github.com/guettli/reprec
+* You need a "setup.py". For example: https://github.com/guettli/reprec/blob/master/setup.py
+* You need .travis.yml https://github.com/guettli/reprec/blob/master/.travis.yml
+* You need a requirements.txt https://github.com/guettli/reprec/blob/master/requirements.txt
+* Remember: requirements.txt ist **not** for depedency management. For me it exists to set up a development system in travis.
+  Use install_requires in setup.py for depedencies.
+* You need a .bumpversion.cfg https://github.com/guettli/reprec/blob/master/.bumpversion.cfg
+* Ensure that the version in .bumpversion.cfg and setup.py are equal.
+* Create an account in travis for your project. Via web gui: "add repo"
+* Now the difficult part: Auth data in an open source project ... where to store the passwords for github commits and pypi uploads?
+* During the next step, please pay attention: Do not commit any files. Plain private keys most not get into the git repo!
+* Travis does provide a way to decrypt data ... great. See https://docs.travis-ci.com/user/encrypting-files/#Encrypting-multiple-files
+* cd ~/src/reprec/; ssh-keygen -f travis_deploy_key # keep passphrase empty
+* save travis_deploy_key and travis_deploy_key.pub in your Keepass.
+* Create a bot-account for pypi via web GUI: https://pypi.python.org/pypi
+* Store username and passwort of pypi bot-account in Keepass.
+
+.pypirc-yourbot
+
+
+[pypi]
+username = yourbot
+password = yourpassword
+
+* tar -cf secret-files.tar travis_deploy_key .pypirc-yourbot
+* vi .travis.yml # remove the old "before_install" line " openssl ... -out secret-files.tar -d" (can be on two lines)
+* travis login --org.
+* travis  encrypt-file -r guettli/reprec secret-files.tar --add
+* The above command changed your .travis.yml file. Changes should be ok. If you removed the old openssl calls everything is fine.
+* enter travis_deploy_key.pub to github via github Web-GUI to Settings/Deploy-Keys. Allow write access
+* move files which must not get into the git repo: mv .pypirc-yourbot secret-files.tar travis_deploy_key travis_deploy_key.pub  ~/tmp
+* git add secret-files.tar.enc; git commit; git push
+* mv ~/.pypirc ~/.pypirc-orig
+* cp ~/tmp/.pypirc-yourbot ~/.pypirc-orig
+* The first is like this. This way the project at pypi get registered. Following updates are via travis.
+* cd src/reprec; python setup.py sdist; twine upload dist/reprec-...tar.gz
+* mv ~/.pypirc-orig ~/.pypirc
+
+
+
+
+
 

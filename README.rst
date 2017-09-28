@@ -52,7 +52,7 @@ password = yourpassword
 * The first is like this. This way the project at pypi get registered. Following updates are via travis.
 * cd src/reprec; python setup.py sdist; twine upload dist/reprec-...tar.gz
 * mv ~/.pypirc-orig ~/.pypirc
-
+* Update your README.rst and add the links to the latest travis-results. Copy+Paste from here: https://raw.githubusercontent.com/guettli/reprec/master/README.rst
 
 
 

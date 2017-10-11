@@ -31,15 +31,12 @@ Steps:
 * cd ~/src/reprec/; ssh-keygen -f travis_deploy_key # keep passphrase empty
 * save travis_deploy_key and travis_deploy_key.pub in your Keepass.
 * Create a bot-account for pypi via web GUI: https://pypi.python.org/pypi
-* Store username and passwort of pypi bot-account in Keepass.
+* Store username and passwort of pypi bot-account in Keepass::
 
-.pypirc-yourbot
-
-
-[pypi]
-username = yourbot
-password = yourpassword
-
+    .pypirc-yourbot
+    [pypi]
+    username = yourbot
+    password = yourpassword
 * tar -cf secret-files.tar travis_deploy_key .pypirc-yourbot
 * vi .travis.yml # remove the old "before_install" line " openssl ... -out secret-files.tar -d" (can be on two lines)
 * travis login --org.

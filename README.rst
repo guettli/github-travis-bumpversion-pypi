@@ -14,6 +14,7 @@ Terms:
 
 * **Keepass**: This is my tool to store secrets. Of course you can use any other tool
 
+Steps:
 
 * Create github repository. For example: https://github.com/guettli/reprec
 * You need a "setup.py". For example: https://github.com/guettli/reprec/blob/master/setup.py

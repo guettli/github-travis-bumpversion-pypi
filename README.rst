@@ -45,7 +45,7 @@ Steps:
 * The above command changed your .travis.yml file. Changes should be ok. If you removed the old openssl calls everything is fine.
 * enter travis_deploy_key.pub to github via github Web-GUI to Settings/Deploy-Keys. Allow write access
 * move files which must not get into the git repo: mv .pypirc-bot secret-files.tar travis_deploy_key travis_deploy_key.pub  ~/tmp
-* git add secret-files.tar.enc; git commit; git push
+* git add secret-files.tar.enc .travis.yml; git commit; git push
 * mv ~/.pypirc ~/.pypirc-orig
 * cp ~/tmp/.pypirc-bot ~/.pypirc-orig
 * The first is like this. This way the project at pypi get registered. Following updates are via travis.

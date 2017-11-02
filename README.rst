@@ -31,7 +31,7 @@ Steps:
 * During the next step, please pay attention: Do not commit any files, except you know what you do. Plain private keys most not get into the git repo!
 * Travis does provide a way to decrypt data ... great. See https://docs.travis-ci.com/user/encrypting-files/#Encrypting-multiple-files
 * cd ~/src/reprec/; ssh-keygen -f travis_deploy_key # keep passphrase empty
-* save travis_deploy_key and travis_deploy_key.pub in your Keepass.
+* save travis_deploy_key and travis_deploy_key.pub in your Keepass. If you want to use this recipie for several repos: The bad news: You need to create and store new deploy keys for every project.
 * Create a bot-account for pypi via web GUI: https://pypi.python.org/pypi
 * Store username and passwort of pypi bot-account in Keepass::
 

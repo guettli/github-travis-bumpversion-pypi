@@ -52,7 +52,7 @@ Steps:
 * cd src/reprec; python setup.py sdist; twine upload dist/reprec-...tar.gz
 * mv ~/.pypirc-orig ~/.pypirc
 * Update your README.rst and add the links to the latest travis-results. Copy+Paste from here: https://raw.githubusercontent.com/guettli/reprec/master/README.rst
-
+* Now have fun. All you do is to code, write tests and commit.
 
 
 

@@ -32,7 +32,7 @@ Steps:
 * Travis does provide a way to decrypt data ... great. See https://docs.travis-ci.com/user/encrypting-files/#Encrypting-multiple-files
 * cd ~/src/reprec/; ssh-keygen -f travis_deploy_key # keep passphrase empty
 * save travis_deploy_key and travis_deploy_key.pub in your Keepass. If you want to use this recipie for several repos: The bad news: You need to create and store new deploy keys for every project.
-* Create a bot-account for pypi via web GUI: https://pypi.python.org/pypi
+* Create a bot-account for pypi via web GUI: https://pypi.python.org/pypi Create it like a normal user account. Use "Register" at top/right.
 * Store username and passwort of pypi bot-account in Keepass::
 
     .pypirc-yourbot

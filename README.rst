@@ -39,7 +39,7 @@ Steps:
     username = mylogin-project-bot
     password = yourpassword
 * tar -cf secret-files.tar travis_deploy_key .pypirc-bot
-* vi .travis.yml # remove the old "before_install" line " openssl ... -out secret-files.tar -d" (can be on two lines)
+* vi .travis.yml # remove the old "before_install" line " openssl ... -out secret-files.tar -d" (can be on two lines). But leave "- tar xvf secret-files.tar" there.
 * travis login --org.
 * travis  encrypt-file -r guettli/reprec secret-files.tar --add
 * The above command changed your .travis.yml file. Changes should be ok. If you removed the old openssl calls everything is fine.

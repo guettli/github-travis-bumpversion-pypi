@@ -35,9 +35,9 @@ Steps:
 * Create a bot-account for pypi via web GUI: https://pypi.python.org/pypi Create it like a normal user account. Use "Register" at top/right. I use the pattern mylogin-project-bot. In this example guettli-reprec-bot
 * Store username and passwort of pypi bot-account in Keepass::
 
-    .pypirc-yourbot
+    .pypirc-bot
     [pypi]
-    username = yourbot
+    username = mylogin-project-bot
     password = yourpassword
 * tar -cf secret-files.tar travis_deploy_key .pypirc-yourbot
 * vi .travis.yml # remove the old "before_install" line " openssl ... -out secret-files.tar -d" (can be on two lines)

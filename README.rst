@@ -48,7 +48,7 @@ Steps:
 * git add secret-files.tar.enc .travis.yml; git commit; git push
 * mv ~/.pypirc ~/.pypirc-orig
 * cp ~/tmp/.pypirc-bot ~/.pypirc-orig
-* The first is like this. This way the project at pypi get registered. Following updates are via travis.
+* The next step is to upload the package to pypi. The first upload is manual, all others are via travis (if all tests are ok). Now the project gets registered at pypi.
 * cd src/reprec; python setup.py sdist; twine upload dist/reprec-...tar.gz
 * mv ~/.pypirc-orig ~/.pypirc
 * Update your README.rst and add the links to the latest travis-results. Copy+Paste from here: https://raw.githubusercontent.com/guettli/reprec/master/README.rst

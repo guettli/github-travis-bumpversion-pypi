@@ -10,6 +10,8 @@ Four steps:
 #. bumpversion
 #. Upload to pypi
 
+The first step gets done by you, the next steps are automated :-)
+
 Terms:
 
 * **Keepass**: This is my tool to store secrets. Of course you can use any other tool

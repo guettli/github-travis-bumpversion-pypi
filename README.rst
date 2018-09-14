@@ -47,7 +47,7 @@ Steps:
 * move files which must not get into the git repo: mv .pypirc-bot secret-files.tar travis_deploy_key travis_deploy_key.pub  ~/tmp
 * git add secret-files.tar.enc .travis.yml; git commit; git push
 * mv ~/.pypirc ~/.pypirc-orig
-* cp ~/tmp/.pypirc-bot ~/.pypirc-orig
+* cp ~/tmp/.pypirc-bot ~/.pypirc
 * The next step is to upload the package to pypi. The first upload is manual, all others are via travis (if all tests are ok). Now the project gets registered at pypi.
 * cd src/reprec; python setup.py sdist; twine upload dist/reprec-...tar.gz
 * mv ~/.pypirc-orig ~/.pypirc

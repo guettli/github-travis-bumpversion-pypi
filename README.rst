@@ -44,15 +44,16 @@ Steps:
 * travis  encrypt-file -r guettli/reprec secret-files.tar --add
 * The above command changed your .travis.yml file. Changes should be ok. If you removed the old openssl calls everything is fine.
 * enter travis_deploy_key.pub to github via github Web-GUI to Settings/Deploy-Keys. Name is "travis_deploy_key.pub". Content is the file content. AND Allow write access. 
-* move files which must not get into the git repo: mv .pypirc-bot secret-files.tar travis_deploy_key travis_deploy_key.pub  ~/tmp
+* move files which must not get into the git repo: mv secret-files.tar travis_deploy_key travis_deploy_key.pub ~/tmp
+* .pypirc-bot is still around. We move this file (containing unecrypted secrets) away later.
 * git add secret-files.tar.enc .travis.yml; git commit; git push
-* mv ~/.pypirc ~/.pypirc-orig
-* cp ~/tmp/.pypirc-bot ~/.pypirc
 * The next step is to upload the package to pypi. The first upload is manual, all others are via travis (if all tests are ok). Now the project gets registered at pypi.
 * Before uploading you need to add mylogin-project-bot to the project as maintainer via pypi web gui.
 * Install `twine` (via pip)
-* cd src/reprec; python setup.py sdist; twine upload dist/reprec-...tar.gz
-* mv ~/.pypirc-orig ~/.pypirc
+* python setup.py sdist
+* twine --config-file .pypirc-bot upload dist/...tar.gz
+* Verify that above line is in your .travis.yml file.
+* Move away the file containing because it contains unecrypted secrets: mv ~/.pypirc-bot ~/tmp/
 * Update your README.rst and add the links to the latest travis-results. Copy+Paste from here: https://raw.githubusercontent.com/guettli/reprec/master/README.rst
 * Now have fun. All you do is to code, write tests and commit. The next steps (execute tests, bumpversion, upload new release) are automated :-)
 

@@ -28,7 +28,7 @@ Steps:
 * Ensure that the version in .bumpversion.cfg and setup.py are equal.
 * Create an account in travis for your project. Via web gui: https://travis-ci.org/ "add repo". If you created the github repository just some minutes ago, then the new repo is missing in the list. If you type in the URL to your repo, then it works nevertheless. In this example the URL is https://travis-ci.org/guettli/reprec/
 * Now the difficult part: Auth data in an open source project ... where to store the passwords for github commits and pypi uploads?
-* During the next step, please pay attention: Do not commit any files, except you know what you do. Plain private keys most not get into the git repo!
+* During the next step, please pay attention: Do not commit any files, except you know what you do. Plain private keys must not get into the git repo!
 * Travis does provide a way to decrypt data ... great. See https://docs.travis-ci.com/user/encrypting-files/#Encrypting-multiple-files
 * cd ~/src/reprec/; ssh-keygen -f travis_deploy_key # keep passphrase empty
 * save travis_deploy_key and travis_deploy_key.pub in your Keepass. If you want to use this recipie for several repos: The bad news: You need to create and store new deploy keys for every project.

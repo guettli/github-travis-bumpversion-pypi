@@ -43,7 +43,7 @@ Steps:
 * travis login --org
 * travis  encrypt-file -r guettli/reprec secret-files.tar --add
 * The above command changed your .travis.yml file. Changes should be ok. If you removed the old openssl calls everything is fine.
-* enter travis_deploy_key.pub to github via github Web-GUI to Settings/Deploy-Keys. Allow write access
+* enter travis_deploy_key.pub to github via github Web-GUI to Settings/Deploy-Keys. Name is "travis_deploy_key.pub". Content is the file content. AND Allow write access. 
 * move files which must not get into the git repo: mv .pypirc-bot secret-files.tar travis_deploy_key travis_deploy_key.pub  ~/tmp
 * git add secret-files.tar.enc .travis.yml; git commit; git push
 * mv ~/.pypirc ~/.pypirc-orig

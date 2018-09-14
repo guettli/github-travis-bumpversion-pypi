@@ -15,6 +15,7 @@ The first step gets done by you, the next steps are automated :-)
 Terms:
 
 * Keepass: This is my tool to store secrets. Of course you can use any other tool
+* reprec: This is the name of my example git repo. Replace this with the name of your git repo.
 
 Steps:
 

@@ -49,6 +49,8 @@ Steps:
 * mv ~/.pypirc ~/.pypirc-orig
 * cp ~/tmp/.pypirc-bot ~/.pypirc
 * The next step is to upload the package to pypi. The first upload is manual, all others are via travis (if all tests are ok). Now the project gets registered at pypi.
+* Before uploading you need to add mylogin-project-bot to the project as maintainer via pypi web gui.
+* Install `twine` (via pip)
 * cd src/reprec; python setup.py sdist; twine upload dist/reprec-...tar.gz
 * mv ~/.pypirc-orig ~/.pypirc
 * Update your README.rst and add the links to the latest travis-results. Copy+Paste from here: https://raw.githubusercontent.com/guettli/reprec/master/README.rst

@@ -32,7 +32,10 @@ Steps:
 * During the next step, please pay attention: Do not commit any files, except you know what you do. Plain private keys must not get into the git repo!
 * Travis does provide a way to decrypt data ... great. See https://docs.travis-ci.com/user/encrypting-files/#Encrypting-multiple-files (but if you read the following instruction, you don't need to read the travis docs).
 * cd ~/src/reprec/; ssh-keygen -f travis_deploy_key # keep passphrase empty
-* save travis_deploy_key and travis_deploy_key.pub in your Keepass. If you want to use this recipie for several repos: The bad news: You need to create and store new deploy keys for every project.
+* save travis_deploy_key and travis_deploy_key.pub in your Keepass. If you want to use this recipie for several repos: The bad news: You need to create and store new deploy keys for every project::
+
+    cat travis_deploy_key
+    cat travis_deploy_key.pub
 * Create a bot-account for pypi via web GUI: https://pypi.python.org/pypi Create it like a normal user account. Use "Register" at top/right. I use the pattern mylogin-project-bot. In this example guettli-reprec-bot. Verify the mail address of the bot (Pypi will send you a registration mail, after you created the new pypi account)
 * Create a file "~/src/reprec/.pypirc-bot" and store username and passwort of pypi bot-account in Keepass::
 

@@ -59,7 +59,9 @@ Steps:
 * Verify that above line is in your .travis.yml file.
 * Move away the file containing because it contains unecrypted secrets: mv .pypirc-bot ~/tmp/
 * Update your README.rst and add the links to the latest travis-results. Copy+Paste from here: https://raw.githubusercontent.com/guettli/reprec/master/README.rst
+* commit and push. Check the travis web site of your repo. 
 * Now have fun. All you do is to code, write tests and commit. The next steps (execute tests, bumpversion, upload new release) are automated :-)
+* I hope above instructions helped you. Please tell me if you find errors or things to improvemnt.
 
 
 

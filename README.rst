@@ -45,7 +45,7 @@ Steps:
 * tar -cf secret-files.tar travis_deploy_key .pypirc-bot
 * vi .travis.yml # The file from reprec does contain a line which you need to remove. The line is after "before_install" and looks like this " openssl ... -out secret-files.tar -d" (can be on two lines)). But leave "- tar xvf secret-files.tar" there.
 * travis login --org
-* travis  encrypt-file -r guettli/reprec secret-files.tar --add
+* travis  encrypt-file -r yourgithublogin/reprec secret-files.tar --add
 * The above command changed your .travis.yml file. Changes should be ok. If you removed the old openssl calls everything is fine.
 * enter travis_deploy_key.pub to github via github Web-GUI to Settings/Deploy-Keys. Name is "travis_deploy_key.pub". Content is the file content. AND Allow write access. 
 * move files which must not get into the git repo: mv secret-files.tar travis_deploy_key travis_deploy_key.pub ~/tmp

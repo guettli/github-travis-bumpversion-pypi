@@ -55,7 +55,7 @@ Steps:
 * Before uploading you need to add mylogin-project-bot to the project as maintainer via pypi web gui.
 * Install `twine` (via pip)
 * python setup.py sdist
-* twine --config-file .pypirc-bot upload dist/...tar.gz
+* twine upload --config-file .pypirc-bot dist/...tar.gz
 * Verify that above line is in your .travis.yml file.
 * Move away the file containing because it contains unecrypted secrets: mv ~/.pypirc-bot ~/tmp/
 * Update your README.rst and add the links to the latest travis-results. Copy+Paste from here: https://raw.githubusercontent.com/guettli/reprec/master/README.rst

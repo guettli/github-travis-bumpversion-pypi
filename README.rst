@@ -23,7 +23,7 @@ Steps:
 * You need a "setup.py". For example: https://github.com/guettli/reprec/blob/master/setup.py
 * You need .travis.yml https://github.com/guettli/reprec/blob/master/.travis.yml
 * You need a requirements.txt https://github.com/guettli/reprec/blob/master/requirements.txt
-* Remember: requirements.txt ist **not** for depedency management. For me it exists to set up a development system in travis.
+* Remember: requirements.txt is **not** for depedency management. For me it exists to set up a development system in travis.
   Use install_requires in setup.py for depedencies.
 * You need a .bumpversion.cfg https://github.com/guettli/reprec/blob/master/.bumpversion.cfg
 * Ensure that the version in .bumpversion.cfg and setup.py are equal.

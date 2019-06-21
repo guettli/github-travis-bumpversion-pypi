@@ -1,5 +1,5 @@
-github-travis-bumpversion-pypi
-==============================
+github -> travis -> bumpversion -> pypi
+=======================================
 
 This documentation explains how I do CI for small open source python projects.
 

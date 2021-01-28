@@ -1,6 +1,12 @@
 github -> travis -> bumpversion -> pypi
 =======================================
 
+This guide is outdated. I guess github Actions are a better solution.
+
+See: https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
+
+---
+
 This documentation explains how I do CI for small open source python projects.
 
 Four steps:
